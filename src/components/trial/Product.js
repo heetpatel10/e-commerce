@@ -2,6 +2,7 @@ import React from 'react'
 import ProductCard from './ProductCard'
 import sampleData from './sampleData'
 
+
 const Product = () => {
   return (
     <>
@@ -164,7 +165,8 @@ const Product = () => {
             </div>
           </div>
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
-            {sampleData.map((items => <ProductCard product={items}></ProductCard>))}
+            {sampleData.length === 0 && <p>No product listed yet</p>}
+            {sampleData.map((items,index) => <ProductCard product={items} index={index}></ProductCard>)}
           </div>
           <div className="w-full text-center">
             <button

@@ -3,6 +3,9 @@ import {Route, Routes } from 'react-router-dom';
 import Header from './components/layouts/Header';
 import Product from './components/trial/Product';
 import { useState } from 'react';
+import Login from './components/layouts/Login';
+import Home from './components/layouts/Home';
+import Register from './components/layouts/Register';
 
 function App() {
 
@@ -16,12 +19,13 @@ function App() {
 
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" exact element={<Home />} />
-      </Routes> */}
-      <Header onChangeHandle={onChangeHandle} ></Header>
-      <Product></Product>
-      <p>{textShow}</p>
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/register" exact element={<Register />} />
+      </Routes>
+      {/* <Header onChangeHandle={onChangeHandle} ></Header> */}
+      {/* <Product></Product> */}
     </div>
   );
 }
