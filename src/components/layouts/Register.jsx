@@ -6,6 +6,7 @@ import { GrFacebookOption, GrApple } from "react-icons/gr";
 import { IoEyeOutline } from "react-icons/io5";
 
 const Register = () => {
+  const states = ["ACT","NSW","NT","QLD","SA","TAS","VIC","WA"]
   const location = useLocation();
   return (
     <>
@@ -43,7 +44,9 @@ const Register = () => {
           <div className="px-14 py-8 grid grid-cols-1">
             <div className="col-span-1 grid grid-cols-1 gap-y-4">
               <div>
-                <h2 className="text-2xl font-bold text-center">Sign in with</h2>
+                <h2 className="text-2xl font-bold text-center">
+                  Register with
+                </h2>
               </div>
               <div>
                 <button className="flex items-center border border-[#AAAAAA] rounded-lg w-full py-2 shadow-sm hover:bg-gray-100">
@@ -51,7 +54,7 @@ const Register = () => {
                   <FcGoogle className="text-red-500 text-2xl w-1/12" />
                   {/* Text */}
                   <span className="text-sm font-semibold text-primarytext uppercase w-11/12">
-                    Sign in with Google
+                    Sign up with Google
                   </span>
                 </button>
               </div>
@@ -61,7 +64,7 @@ const Register = () => {
                   <GrFacebookOption className="text-[#4267B2] text-2xl w-1/12" />
                   {/* Text */}
                   <span className="text-sm font-semibold text-primarytext uppercase w-11/12">
-                    Sign in with Facebook
+                    Sign up with Facebook
                   </span>
                 </button>
               </div>
@@ -71,7 +74,7 @@ const Register = () => {
                   <GrApple className="text-black text-2xl w-1/12" />
                   {/* Text */}
                   <span className="text-sm font-semibold text-primarytext uppercase w-11/12">
-                    Sign in with Apple
+                    Sign up with Apple
                   </span>
                 </button>
               </div>
@@ -81,14 +84,126 @@ const Register = () => {
               <span class="px-4 text-primarytext">or</span>
               <div class="flex-grow border-t-2 border-gray-400"></div>
             </div>
-            <div className="col-span-1 grid grid-cols-1 gap-y-4">
-              <div>
+            <div className="col-span-1 grid grid-cols-2 gap-y-4 gap-x-3">
+              <div className="col-span-2">
                 <h2 className="text-2xl font-bold text-center">
-                  Sign in with email
+                  Register with email
                 </h2>
               </div>
+              {/* First Name Field */}
+              <div className="relative col-span-1">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="firstname"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor=""
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  First name *
+                </label>
+              </div>
+
+              {/* Last Name Field */}
+              <div className="relative col-span-1">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="lastname"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Last name *
+                </label>
+              </div>
+              {/* Address Field */}
+              <div className="relative col-span-2">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="streetaddress1"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Street address 1 *
+                </label>
+              </div>
+              {/* Address Field */}
+              <div className="relative col-span-2">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="streetaddress2"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Street address 2
+                </label>
+              </div>
+              {/* Suburb Field */}
+              <div className="relative col-span-2">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="streetaddress2"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Suburb *
+                </label>
+              </div>
+              {/* Suburb Field */}
+              <div className="relative col-span-1">
+                {/* Email Input Field */}
+                <select className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer">
+                  {states.map((items)=>(
+                    <option value={items}>{items}</option>
+                  ))}
+                </select>
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  State *
+                </label>
+              </div>
+              {/* Suburb Field */}
+              <div className="relative col-span-1">
+                {/* Email Input Field */}
+                <input
+                  type="text"
+                  id="streetaddress2"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="lastname"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Postcode *
+                </label>
+              </div>
               {/* Email Field */}
-              <div className="relative">
+              <div className="relative col-span-2">
                 {/* Email Input Field */}
                 <input
                   type="email"
@@ -103,9 +218,24 @@ const Register = () => {
                   Email address *
                 </label>
               </div>
-
+              {/* Email Field */}
+              <div className="relative col-span-2">
+                {/* Email Input Field */}
+                <input
+                  type="email"
+                  id="email"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                >
+                  Phone number *
+                </label>
+              </div>
               {/* Password Field with Eye Icon */}
-              <div className="relative">
+              <div className="relative col-span-2">
                 {/* Email Input Field */}
                 <input
                   type="password"
@@ -117,23 +247,29 @@ const Register = () => {
                   htmlFor="password"
                   className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
                 >
-                  Password *
+                  Create password *
                 </label>
                 <IoEyeOutline className="absolute text-2xl right-3 top-3 text-gray-500 cursor-pointer" />
               </div>
-
-              {/* Forgot Password Link */}
-              <div className="">
-                <a
-                  href="/forgot-password"
-                  className="text-sm text-gray-500 hover:text-gray-700"
+              {/* Email Field */}
+              <div className="relative col-span-2">
+                {/* Email Input Field */}
+                <input
+                  type="email"
+                  id="email"
+                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                  placeholder=" " // Keeps the label floating effect functional
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
                 >
-                  Forgot password?
-                </a>
+                  Re-enter password *
+                </label>
               </div>
 
               {/* Sign In Button */}
-              <div>
+              <div className="col-span-2">
                 <button className="w-full bg-black uppercase text-white font-semibold py-2 rounded-sm hover:bg-gray-800">
                   Sign In
                 </button>
