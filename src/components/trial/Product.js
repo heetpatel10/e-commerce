@@ -166,7 +166,7 @@ const Product = () => {
           </div>
           <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
             {sampleData.length === 0 && <p>No product listed yet</p>}
-            {sampleData.map((items,index) => <ProductCard product={items} index={index}></ProductCard>)}
+            {sampleData.map((items,index) => <ProductCard key={index} product={items} index={index}></ProductCard>)}
           </div>
           <div className="w-full text-center">
             <button

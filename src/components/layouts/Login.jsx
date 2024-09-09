@@ -4,8 +4,23 @@ import { Link, useLocation } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { GrFacebookOption, GrApple } from "react-icons/gr";
 import { IoEyeOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const {name, value} = e.target;
+    setFormData({...formData,[name]: value});
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Submitted", formData);
+  };
   const location = useLocation(); // Get the current route path
   return (
     <>
@@ -77,64 +92,72 @@ const Login = () => {
               <span className="px-4 text-primarytext">or</span>
               <div className="flex-grow border-t-2 border-gray-400"></div>
             </div>
-            <div className="col-span-1 grid grid-cols-1 gap-y-4">
-              <div>
-                <h2 className="text-2xl font-bold text-center">
-                  Sign in with email
-                </h2>
-              </div>
-              {/* Email Field */}
-              <div className="relative">
-                {/* Email Input Field */}
-                <input
-                  type="email"
-                  id="email"
-                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-                  placeholder=" " // Keeps the label floating effect functional
-                />
-                <label
-                  htmlFor="email"
-                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
-                >
-                  Email address *
-                </label>
-              </div>
+            <form>
+              <div className="col-span-1 grid grid-cols-1 gap-y-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-center">
+                    Sign in with email
+                  </h2>
+                </div>
+                {/* Email Field */}
+                <div className="relative">
+                  {/* Email Input Field */}
+                  <input
+                    onChange={handleInputChange}
+                    type="email"
+                    id="email"
+                    className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                    placeholder=" " // Keeps the label floating effect functional
+                  />
+                  <label
+                    htmlFor="email"
+                    className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                  >
+                    Email address *
+                  </label>
+                </div>
 
-              {/* Password Field with Eye Icon */}
-              <div className="relative">
-                {/* Email Input Field */}
-                <input
-                  type="password"
-                  id="password"
-                  className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
-                  placeholder=" " // Keeps the label floating effect functional
-                />
-                <label
-                  htmlFor="password"
-                  className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
-                >
-                  Password *
-                </label>
-                <IoEyeOutline className="absolute text-2xl right-3 top-3 text-gray-500 cursor-pointer" />
-              </div>
+                {/* Password Field with Eye Icon */}
+                <div className="relative">
+                  {/* Email Input Field */}
+                  <input
+                    onChange={handleInputChange}
+                    type="password"
+                    id="password"
+                    className="block rounded-lg font-semibold px-2.5 pb-2.5 pt-4 w-full text-sm text-primarytext bg-white border border-[#AAAAAA] appearance-none focus:outline-none focus:ring-0 focus:border-black peer"
+                    placeholder=" " // Keeps the label floating effect functional
+                  />
+                  <label
+                    htmlFor="password"
+                    className="absolute text-sm text-gray-600 font-medium duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                  >
+                    Password *
+                  </label>
+                  <IoEyeOutline className="absolute text-2xl right-3 top-3 text-gray-500 cursor-pointer" />
+                </div>
 
-              {/* Forgot Password Link */}
-              <div className="">
-                <a
-                  href="/forgot-password"
-                  className="text-sm text-gray-500 hover:text-gray-700"
-                >
-                  Forgot password?
-                </a>
-              </div>
+                {/* Forgot Password Link */}
+                <div className="">
+                  <a
+                    href="/forgot-password"
+                    className="text-sm text-gray-500 hover:text-gray-700"
+                  >
+                    Forgot password?
+                  </a>
+                </div>
 
-              {/* Sign In Button */}
-              <div>
-                <button className="w-full bg-black uppercase text-white font-semibold py-2 rounded-sm hover:bg-gray-800">
-                  Sign In
-                </button>
+                {/* Sign In Button */}
+                <div>
+                  <button
+                    onSubmit={handleSubmit}
+                    type="submit"
+                    className="w-full bg-black uppercase text-white font-semibold py-2 rounded-sm hover:bg-gray-800"
+                  >
+                    Sign In
+                  </button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
