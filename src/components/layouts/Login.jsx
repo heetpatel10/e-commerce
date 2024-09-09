@@ -72,10 +72,10 @@ const Login = () => {
                 </button>
               </div>
             </div>
-            <div class="flex items-center justify-center my-4">
-              <div class="flex-grow border-t-2 border-gray-400"></div>
-              <span class="px-4 text-primarytext">or</span>
-              <div class="flex-grow border-t-2 border-gray-400"></div>
+            <div className="flex items-center justify-center my-4">
+              <div className="flex-grow border-t-2 border-gray-400"></div>
+              <span className="px-4 text-primarytext">or</span>
+              <div className="flex-grow border-t-2 border-gray-400"></div>
             </div>
             <div className="col-span-1 grid grid-cols-1 gap-y-4">
               <div>

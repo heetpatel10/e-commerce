@@ -6,7 +6,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { PiUserCircleFill } from "react-icons/pi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-const Header = ({ onChangeHandle }) => {
+const Header = () => {
   return (
     <>
       <header className="w-full">
@@ -20,13 +20,12 @@ const Header = ({ onChangeHandle }) => {
             {/* Navbar Search Bar */}
             <div className="basis-2/5">
               <form className="w-full">
-                <div class="relative">
-                  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-primarytext text-bold">
+                <div className="relative">
+                  <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-primarytext text-bold">
                     <IoSearch />
                   </div>
                   <input
                     type="text"
-                    onChange={onChangeHandle}
                     id="default-search"
                     className="block w-full py-3 ps-10 text-sm rounded-full bg-graytheme text-primarytext placeholder:text-primarytext placeholder:font-semibold focus:outline-none"
                     placeholder="Search for products / brands / categories"

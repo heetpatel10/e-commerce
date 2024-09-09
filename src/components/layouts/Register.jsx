@@ -79,10 +79,10 @@ const Register = () => {
                 </button>
               </div>
             </div>
-            <div class="flex items-center justify-center my-4">
-              <div class="flex-grow border-t-2 border-gray-400"></div>
-              <span class="px-4 text-primarytext">or</span>
-              <div class="flex-grow border-t-2 border-gray-400"></div>
+            <div className="flex items-center justify-center my-4">
+              <div className="flex-grow border-t-2 border-gray-400"></div>
+              <span className="px-4 text-primarytext">or</span>
+              <div className="flex-grow border-t-2 border-gray-400"></div>
             </div>
             <div className="col-span-1 grid grid-cols-2 gap-y-4 gap-x-3">
               <div className="col-span-2">
@@ -271,7 +271,7 @@ const Register = () => {
               {/* Sign In Button */}
               <div className="col-span-2">
                 <button className="w-full bg-black uppercase text-white font-semibold py-2 rounded-sm hover:bg-gray-800">
-                  Sign In
+                  Create an account
                 </button>
               </div>
             </div>
